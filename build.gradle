@@ -1,0 +1,60 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    group 'db_access'
+}
+
+
+subprojects {
+    repositories {
+        maven { url 'http://artifactory.nm.flipkart.com:8081/artifactory/libs-snapshots' }
+        maven { url 'http://artifactory.nm.flipkart.com:8081/artifactory/libs-releases' }
+        mavenCentral()
+    }
+
+    dependencies {
+
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+        // http://mvnrepository.com/artifact/mysql/mysql-connector-java
+        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+
+        compile 'org.hibernate:hibernate-entitymanager:4.3.0.Final'
+
+
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+        testCompile 'org.hsqldb:hsqldb:2.3.1'
+        testCompile 'org.hibernate:hibernate-entitymanager:4.3.0.Final'
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+        testCompile 'org.hsqldb:hsqldb:2.3.1'
+
+        testCompile 'com.yammer.dropwizard:dropwizard-testing:0.6.2'
+        testCompile 'fk.sp.common:common-test-extensions:0.5.+'
+        testCompile 'org.jukito:jukito:1.3'
+
+        compile 'com.google.guava:guava:15.0',
+                'joda-time:joda-time:2.3',
+                'javax.validation:validation-api:1.0.0.GA',
+                'fk.sp.common:common-extensions:0.5.+',
+                'fk.sp.common:spring-jpa:0.5.+'
+
+        compile 'com.google.guava:guava:15.0'
+    }
+}
+
+subprojects {
+    configurations {
+        all*.exclude group: 'log4j', module: 'log4j'
+        all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        all*.exclude group: 'org.slf4j', module: 'slf4j-simple'
+        all*.exclude group: 'org.testng', module: 'testng'
+    }
+
+    // this is required for entity scanning to work correctly while
+    // running tests from gradle -
+    // http://forums.gradle.org/gradle/topics/regression_with_classloading_in_the_jetty_plugin_with_gradle_1_0_milestone_6
+    sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDir
+//
+//    jar {
+//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+//    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+    <named-query name="findOrderByStatus">
+        <query>
+            <![CDATA[
+            select c from OrderEntity c where c.status = :status
+            ]]>
+        </query>
+    </named-query>
+    <named-query name="findOrderByExternalId">
+        <query>
+            <![CDATA[
+            select c from OrderEntity c where c.externalOrderId = :externalOrderId
+            ]]>
+        </query>
+    </named-query>
+</entity-mappings>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: fk.sp.common:spring-jpa:0.5.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fk.sp.common/spring-jpa/0.5.6/b7b4749077e8504f7cd7778326175665fb0e37a7/spring-jpa-0.5.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fk.sp.common/spring-jpa/0.5.6/dc80bc224735e78a084ccb2c670f0bb79ad979fa/spring-jpa-0.5.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

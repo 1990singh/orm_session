@@ -1,0 +1,6 @@
+rootProject.name = 'db_access'
+
+include 'jdbc_examples'
+include 'jpa'
+include 'jpa_advance'
+

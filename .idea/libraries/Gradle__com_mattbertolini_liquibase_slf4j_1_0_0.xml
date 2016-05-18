@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mattbertolini:liquibase-slf4j:1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mattbertolini/liquibase-slf4j/1.0.0/e2fd739d69a40db71e252462b2ac465521f0b15e/liquibase-slf4j-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mattbertolini/liquibase-slf4j/1.0.0/229fbe66f772e612ff18a7fa79e7268be31e9f66/liquibase-slf4j-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

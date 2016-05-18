@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jpa.example.TestJpaMethods" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-18T07:42:44" hostname="Adarsh.local" time="1.307">
+  <properties/>
+  <testcase name="testAutoIncrement" classname="com.jpa.example.TestJpaMethods" time="1.307"/>
+  <system-out><![CDATA[13:12:44.146 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+13:12:44.174 [Test worker] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:12:44.174 [Test worker] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:12:44.174 [Test worker] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:12:44.178 [Test worker] DEBUG o.h.b.r.c.i.ClassLoaderServiceImpl - Incoming config yielded no classloaders; adding standard SE ones
+13:12:44.252 [Test worker] DEBUG o.h.jpa.HibernatePersistenceProvider - Located and parsed 2 persistence units; checking each
+13:12:44.252 [Test worker] DEBUG o.h.jpa.HibernatePersistenceProvider - Checking persistence-unit [name=main, explicit-provider=fk.sp.common.extensions.jpa.DynamicPersistenceProvider] against incoming persistence unit name [hsqldb-ds]
+13:12:44.252 [Test worker] DEBUG o.h.jpa.HibernatePersistenceProvider - Excluding from consideration due to name mis-match
+13:12:44.252 [Test worker] DEBUG o.h.jpa.HibernatePersistenceProvider - Checking persistence-unit [name=hsqldb-ds, explicit-provider=org.hibernate.ejb.HibernatePersistence] against incoming persistence unit name [hsqldb-ds]
+13:12:44.254 [Test worker] DEBUG o.h.jpa.boot.spi.ProviderChecker - Persistence-unit [hsqldb-ds] requested PersistenceProvider [org.hibernate.ejb.HibernatePersistence]
+13:12:44.263 [Test worker] DEBUG o.h.jpa.internal.util.LogHelper - PersistenceUnitInfo [
+	name: hsqldb-ds
+	persistence provider classname: org.hibernate.ejb.HibernatePersistence
+	classloader: null
+	excludeUnlistedClasses: false
+	JTA datasource: null
+	Non JTA datasource: null
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/Users/adarsh.singh/code/db_access/jpa/build/classes/main/
+	Shared Cache Mode: null
+	Validation Mode: null
+	Jar files URLs []
+	Managed classes names [
+		com.jpa.example.model.Student
+		com.jpa.example.model.Course]
+	Mapping files names []
+	Properties [
+		hibernate.transaction.flush_before_completion: true
+		javax.persistence.jdbc.user: sa
+		hibernate.dialect: org.hibernate.dialect.HSQLDialect
+		javax.persistence.jdbc.url: jdbc:hsqldb:mem:demodb
+		hibernate.format_sql: true
+		javax.persistence.jdbc.driver: org.hsqldb.jdbcDriver
+		hibernate.hbm2ddl.auto: create-drop
+		hibernate.show_sql: true
+		javax.persistence.jdbc.password: ]
+13:12:44.274 [Test worker] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+13:12:44.276 [Test worker] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+13:12:44.277 [Test worker] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+13:12:44.277 [Test worker] DEBUG o.h.i.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.jpa.event.spi.JpaIntegrator].
+13:12:44.288 [Test worker] DEBUG o.h.b.r.s.i.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5] -> [org.hibernate.dialect.MySQL5Dialect] (replacing [org.hibernate.dialect.MySQL5Dialect])
+13:12:44.288 [Test worker] DEBUG o.h.b.r.s.i.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5InnoDB] -> [org.hibernate.dialect.MySQL5InnoDBDialect] (replacing [org.hibernate.dialect.MySQL5InnoDBDialect])
+13:12:44.314 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.0.Final}
+13:12:44.316 [Test worker] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+13:12:44.317 [Test worker] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+13:12:44.373 [Test worker] WARN  o.h.j.b.i.EntityManagerFactoryBuilderImpl - HHH000059: Defining hibernate.transaction.flush_before_completion=true ignored in HEM
+13:12:44.376 [Test worker] DEBUG o.h.service.spi.ServiceBinding - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+13:12:44.396 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@52d93103
+13:12:44.396 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@52d93103
+13:12:44.396 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@52d93103
+13:12:44.397 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3d5ffbed
+13:12:44.398 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6aa5d1
+13:12:44.398 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@68ae0e27
+13:12:44.399 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@7f2af759
+13:12:44.399 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@7f2af759
+13:12:44.399 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7f2af759
+13:12:44.401 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@60cd308c
+13:12:44.401 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@60cd308c
+13:12:44.401 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@60cd308c
+13:12:44.403 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@14f3c543
+13:12:44.403 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@14f3c543
+13:12:44.403 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@14f3c543
+13:12:44.404 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@58894e06
+13:12:44.404 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@58894e06
+13:12:44.404 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@58894e06
+13:12:44.405 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@237bb7a8
+13:12:44.405 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@237bb7a8
+13:12:44.405 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@237bb7a8
+13:12:44.407 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@851d3f8
+13:12:44.407 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@851d3f8
+13:12:44.407 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@851d3f8
+13:12:44.408 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@2cbe2ba2
+13:12:44.408 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@2cbe2ba2
+13:12:44.408 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@2cbe2ba2
+13:12:44.409 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@647defc1
+13:12:44.409 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@647defc1
+13:12:44.410 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@23b4224c
+13:12:44.410 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@23b4224c
+13:12:44.411 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@1a83496b
+13:12:44.411 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@1a83496b
+13:12:44.412 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@ec071
+13:12:44.412 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@6086c62c
+13:12:44.413 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@309b16d7
+13:12:44.413 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@309b16d7
+13:12:44.415 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@10410dcd
+13:12:44.415 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@10410dcd
+13:12:44.416 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@33dac677
+13:12:44.416 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@33dac677
+13:12:44.417 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@288555e4
+13:12:44.417 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@288555e4
+13:12:44.417 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@288555e4
+13:12:44.418 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@36fe05da
+13:12:44.419 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@1244bf53
+13:12:44.419 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@1244bf53
+13:12:44.419 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@1244bf53
+13:12:44.420 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@6227a524
+13:12:44.421 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@7d8c5df
+13:12:44.421 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@7d8c5df
+13:12:44.422 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@2e489801
+13:12:44.422 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2e489801
+13:12:44.422 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@50ffbd9c
+13:12:44.423 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@50ffbd9c
+13:12:44.423 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@54c83223
+13:12:44.423 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@54c83223
+13:12:44.424 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@7ff046a6
+13:12:44.425 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@7ff046a6
+13:12:44.425 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@516499e9
+13:12:44.426 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@5a5a119
+13:12:44.427 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@6a4969ff
+13:12:44.427 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@6a4969ff
+13:12:44.427 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@6a4969ff
+13:12:44.428 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6d2c3e18
+13:12:44.428 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6d2c3e18
+13:12:44.428 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6d2c3e18
+13:12:44.428 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@375524c0
+13:12:44.429 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@2769ed57
+13:12:44.429 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@2769ed57
+13:12:44.429 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@2769ed57
+13:12:44.430 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4287e84f
+13:12:44.430 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4287e84f
+13:12:44.430 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4287e84f
+13:12:44.431 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@9eae452
+13:12:44.432 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@2383ae19
+13:12:44.435 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@63983b60
+13:12:44.435 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@63983b60
+13:12:44.435 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@5e123e09
+13:12:44.438 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@48abdd00
+13:12:44.439 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@48abdd00
+13:12:44.441 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@525cc772
+13:12:44.441 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@525cc772
+13:12:44.441 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@70d9ca96
+13:12:44.442 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@2a5825a8
+13:12:44.442 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@6bc61378
+13:12:44.444 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@442210af
+13:12:44.444 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@442210af
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@4ec06167
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@1ab3b778
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@362a359e
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7e604d61
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@3366d093
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@34e9b9f0
+13:12:44.445 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@5308fc36
+13:12:44.446 [Test worker] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@2f7fb873
+13:12:44.458 [Test worker] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+13:12:44.468 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+13:12:44.470 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+13:12:44.471 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+13:12:44.471 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+13:12:44.472 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+13:12:44.472 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+13:12:44.473 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+13:12:44.473 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+13:12:44.474 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+13:12:44.474 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+13:12:44.474 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+13:12:44.475 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+13:12:44.475 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+13:12:44.476 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+13:12:44.476 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+13:12:44.481 [Test worker] DEBUG org.hibernate.cfg.Configuration - Preparing to build session factory with filters : {}
+13:12:44.486 [Test worker] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+13:12:44.492 [Test worker] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000401: using driver [org.hsqldb.jdbcDriver] at URL [jdbc:hsqldb:mem:demodb]
+13:12:44.492 [Test worker] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000046: Connection properties: {user=sa}
+13:12:44.492 [Test worker] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000006: Autocommit mode: false
+13:12:44.493 [Test worker] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+13:12:44.493 [Test worker] DEBUG o.h.e.j.c.i.DriverManagerConnectionProviderImpl - Initializing Connection pool with 1 Connections
+13:12:44.751 [Test worker] DEBUG o.h.e.jdbc.internal.JdbcServicesImpl - Database ->
+       name : HSQL Database Engine
+    version : 2.3.0
+      major : 2
+      minor : 3
+13:12:44.752 [Test worker] DEBUG o.h.e.jdbc.internal.JdbcServicesImpl - Driver ->
+       name : HSQL Database Engine Driver
+    version : 2.3.0
+      major : 2
+      minor : 3
+13:12:44.752 [Test worker] DEBUG o.h.e.jdbc.internal.JdbcServicesImpl - JDBC version : 4.0
+13:12:44.753 [Test worker] DEBUG o.h.e.j.c.i.StandardRefCursorSupport - Unexpected error trying to gauge level of JDBC REF_CURSOR support : null
+13:12:44.766 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+13:12:44.794 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:12:44.794 [Test worker] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:12:44.796 [Test worker] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.jpa.example.model.Course
+13:12:44.812 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+13:12:44.812 [Test worker] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+13:12:44.816 [Test worker] DEBUG o.h.cfg.annotations.EntityBinder - Import with entity name Course
+13:12:44.819 [Test worker] DEBUG o.h.cfg.annotations.EntityBinder - Bind entity com.jpa.example.model.Course on table Course
+13:12:44.837 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=ID, insertable=true, updatable=true, unique=false}
+13:12:44.839 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:12:44.841 [Test worker] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.jpa.example.model.Course:id]
+13:12:44.841 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for id
+13:12:44.843 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property id
+13:12:44.846 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=name, insertable=true, updatable=true, unique=false}
+13:12:44.847 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property name with lazy=false
+13:12:44.847 [Test worker] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.jpa.example.model.Course:name]
+13:12:44.847 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for name
+13:12:44.847 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property name
+13:12:44.848 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=null, insertable=true, updatable=true, unique=false}
+13:12:44.855 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=element, insertable=true, updatable=true, unique=false}
+13:12:44.855 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Course), mappingColumn=students_KEY, insertable=true, updatable=true, unique=false}
+13:12:44.855 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='students_KEY', referencedColumn='null', mappedBy='null'}
+13:12:44.856 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='courses'}
+13:12:44.856 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='courses'}
+13:12:44.857 [Test worker] DEBUG o.h.cfg.annotations.CollectionBinder - Collection role: com.jpa.example.model.Course.students
+13:12:44.858 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property students
+13:12:44.859 [Test worker] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.jpa.example.model.Student
+13:12:44.860 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+13:12:44.860 [Test worker] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+13:12:44.860 [Test worker] DEBUG o.h.cfg.annotations.EntityBinder - Import with entity name Student
+13:12:44.860 [Test worker] DEBUG o.h.cfg.annotations.EntityBinder - Bind entity com.jpa.example.model.Student on table Student
+13:12:44.867 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=ID, insertable=true, updatable=true, unique=false}
+13:12:44.868 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:12:44.868 [Test worker] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.jpa.example.model.Student:id]
+13:12:44.868 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for id
+13:12:44.868 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property id
+13:12:44.868 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=null, insertable=true, updatable=true, unique=false}
+13:12:44.869 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=element, insertable=true, updatable=true, unique=false}
+13:12:44.869 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=courses_KEY, insertable=true, updatable=true, unique=false}
+13:12:44.869 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='courses_KEY', referencedColumn='null', mappedBy='null'}
+13:12:44.869 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='STD_ID', referencedColumn='ID', mappedBy=''}
+13:12:44.869 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='COR_ID', referencedColumn='ID', mappedBy=''}
+13:12:44.869 [Test worker] DEBUG o.h.cfg.annotations.CollectionBinder - Collection role: com.jpa.example.model.Student.courses
+13:12:44.869 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property courses
+13:12:44.870 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=name, insertable=true, updatable=true, unique=false}
+13:12:44.870 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property name with lazy=false
+13:12:44.870 [Test worker] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.jpa.example.model.Student:name]
+13:12:44.870 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for name
+13:12:44.870 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property name
+13:12:44.870 [Test worker] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(Student), mappingColumn=version, insertable=true, updatable=true, unique=false}
+13:12:44.870 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - MetadataSourceProcessor property version with lazy=false
+13:12:44.870 [Test worker] DEBUG o.h.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.jpa.example.model.Student:version]
+13:12:44.870 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - building SimpleValue for version
+13:12:44.871 [Test worker] DEBUG o.h.cfg.annotations.PropertyBinder - Building property version
+13:12:44.871 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:12:44.872 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - Starting fillSimpleValue for name
+13:12:44.872 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:12:44.872 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - Starting fillSimpleValue for name
+13:12:44.872 [Test worker] DEBUG o.h.c.annotations.SimpleValueBinder - Starting fillSimpleValue for version
+13:12:44.872 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:12:44.902 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:44.902 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:44.902 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:12:44.902 [Test worker] DEBUG o.hibernate.cfg.CollectionSecondPass - Second pass for collection: com.jpa.example.model.Student.courses
+13:12:44.903 [Test worker] DEBUG o.h.cfg.annotations.CollectionBinder - Binding as ManyToMany: com.jpa.example.model.Student.courses
+13:12:44.908 [Test worker] DEBUG o.hibernate.cfg.CollectionSecondPass - Mapped collection key: STD_ID, element: COR_ID
+13:12:44.908 [Test worker] DEBUG o.hibernate.cfg.CollectionSecondPass - Second pass for collection: com.jpa.example.model.Course.students
+13:12:44.909 [Test worker] DEBUG o.h.cfg.annotations.CollectionBinder - Binding as ManyToMany: com.jpa.example.model.Course.students
+13:12:44.909 [Test worker] DEBUG o.h.cfg.annotations.TableBinder - Retrieving property com.jpa.example.model.Student.courses
+13:12:44.909 [Test worker] DEBUG o.hibernate.cfg.CollectionSecondPass - Mapped collection key: COR_ID, element: STD_ID
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Course
+13:12:44.909 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Student
+13:12:44.911 [Test worker] DEBUG o.h.e.t.j.p.i.JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+13:12:44.911 [Test worker] DEBUG o.h.e.t.j.p.i.JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+13:12:44.914 [Test worker] DEBUG o.h.e.t.j.p.i.StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Automatic flush during beforeCompletion(): enabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Automatic session close at end of transaction: disabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - JDBC batch size: 15
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - JDBC batch updates for versioned data: disabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Scrollable result sets: enabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Wrap result sets: disabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - JDBC3 getGeneratedKeys(): enabled
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - multi-tenancy strategy : NONE
+13:12:44.916 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Connection release mode: auto
+13:12:44.918 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Using BatchFetchStyle : LEGACY
+13:12:44.918 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Default batch fetch size: 1
+13:12:44.918 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Generate SQL with comments: disabled
+13:12:44.919 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Order SQL updates by primary key: disabled
+13:12:44.919 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Order SQL inserts for batching: disabled
+13:12:44.919 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Default null ordering: none
+13:12:44.919 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+13:12:44.920 [Test worker] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+13:12:44.921 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Query language substitutions: {}
+13:12:44.921 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - JPA-QL strict compliance: disabled
+13:12:44.921 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Second-level cache: enabled
+13:12:44.921 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Query cache: disabled
+13:12:44.921 [Test worker] DEBUG o.h.c.i.RegionFactoryInitiator - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+13:12:44.923 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Optimize cache for minimal puts: disabled
+13:12:44.923 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Structured second-level cache entries: disabled
+13:12:44.923 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Second-level cache direct-reference entries: disabled
+13:12:44.923 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Automatic eviction of collection cache: disabled
+13:12:44.923 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Statistics: disabled
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Deleted entity synthetic identifier rollback: disabled
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Default entity-mode: pojo
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Named query checking : enabled
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - Allow initialization of lazy state outside session : : disabled
+13:12:44.924 [Test worker] DEBUG org.hibernate.cfg.SettingsFactory - JTA Track by Thread: enabled
+13:12:44.930 [Test worker] DEBUG o.h.internal.SessionFactoryImpl - Building session factory
+13:12:44.937 [Test worker] DEBUG o.h.internal.SessionFactoryImpl - Session factory constructed with filter configurations : {}
+13:12:44.937 [Test worker] DEBUG o.h.internal.SessionFactoryImpl - Instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib, java.vm.version=25.25-b02, gopherProxySet=false, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=US, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/Users/adarsh.singh/code/db_access/jpa, java.runtime.version=1.8.0_25-b17, javax.persistence.jdbc.user=sa, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/endorsed, os.arch=x86_64, java.io.tmpdir=/var/folders/3c/nk34j01506ld75p22y4gld20dkp8ck/T/, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, javax.persistence.jdbc.password=, user.variant=, os.name=Mac OS X, sun.jnu.encoding=UTF-8, javax.persistence.jdbc.url=jdbc:hsqldb:mem:demodb, java.library.path=/Users/adarsh.singh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., javax.persistence.jdbc.driver=org.hsqldb.jdbcDriver, hibernate.ejb.persistenceUnitName=hsqldb-ds, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=10.10.4, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, user.home=/Users/adarsh.singh, user.timezone=Asia/Kolkata, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, java.specification.version=1.8, file.encoding=UTF-8, hibernate.format_sql=true, user.name=adarsh.singh, java.class.path=/Users/adarsh.singh/code/db_access/jpa/build/classes/test:/Users/adarsh.singh/code/db_access/jpa/build/resources/test:/Users/adarsh.singh/code/db_access/jpa/build/classes/main:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.6.RELEASE/5f0a135b8cf290aa244097dc6264ad0989d25c56/spring-expression-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.8/2ce9de13f277ec1600e7e04231477e3e5f59d317/lombok-1.16.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.0.6.RELEASE/28fa5e60c3d68132d83d9c1e7d9fccebb83c9104/spring-jdbc-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.38/dbbd7cd309ce167ec8367de4e41c63c2c8593cc5/mysql-connector-java-5.1.38.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey.jersey-test-framework/jersey-test-framework-core/1.17.1/cb0412982db5e498271f0f64b200511168da3c67/jersey-test-framework-core-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-entitymanager/4.3.0.Final/8a2ae6e8638b4eb4cbf3f3adfc4c03e5de831d93/hibernate-entitymanager-4.3.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.0.6.RELEASE/6b4ed868e07d58f2cf15bcd7958acd86fd4f3da4/spring-tx-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.3/56498efd17752898cfcc3868c1b6211a07b12b8f/joda-time-2.3.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.0.0.GA/b6bd7f9d78f6fdaa3c37dae18a4bd298915f328e/validation-api-1.0.0.GA.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/fk.sp.common/common-extensions/0.5.6/56752898b4eec59308273a579bbefc562d22430d/common-extensions-0.5.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/fk.sp.common/spring-jpa/0.5.6/b7b4749077e8504f7cd7778326175665fb0e37a7/spring-jpa-0.5.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/junit/junit/4.11/4e031bb61df09069aeb2bffb4019e7a5034a4ee0/junit-4.11.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hsqldb/hsqldb/2.3.1/bd7153caa30958e1c64a3dd38b93e5a7442d9a0e/hsqldb-2.3.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.dropwizard/dropwizard-testing/0.6.2/e3fa842a434528c416ff536b72087efd97e7e1f7/dropwizard-testing-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/fk.sp.common/common-test-extensions/0.5.6/2370b2e2e787dbbdbd5342e80bf93d54696a3b8a/common-test-extensions-0.5.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jukito/jukito/1.3/92cc9f2ec05bd16a8070c19173d41bdaac1eccb6/jukito-1.3.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.1.3.GA/64499e907f19e5e1b3fdc02f81440c1832fe3545/jboss-logging-3.1.3.GA.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey.jersey-test-framework/jersey-test-framework-inmemory/1.17.1/b378f6c5cd8f4433983e1496e8678c71d39b33a0/jersey-test-framework-inmemory-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.easytesting/fest-util/1.2.5/c4a8d7305b23b8d043be12c979813b096df11f44/fest-util-1.2.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.0/9b473564e792c2bdf1449da1f0b1b5bff9805704/objenesis-1.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging-annotations/1.2.0.Beta1/2f437f37bb265d9f8f1392823dbca12d2bec06d6/jboss-logging-annotations-1.2.0.Beta1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu.inject/cglib/2.2.1-v20090111/7ce5e983fd0e6c78346f4c9cbfa39d83049dda2/cglib-2.2.1-v20090111.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/1.9.5/79a8984096fc6591c1e3690e07d41be506356fa5/mockito-all-1.9.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.5.6/16390e2d74df4ab08c06a85d42a74a951dc93ad7/commons-pool-1.5.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/spy/spymemcached/2.7.3/1ae59770f332d7f560a3f2894a4f14d9c3c38d62/spymemcached-2.7.3.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.easytesting/fest-assert-core/2.0M10/cb7c91cf614901928ae405f19d9bcdedf82781db/fest-assert-core-2.0M10.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/4.3.0.Final/bc072796a1658083c535e19fda2f6c48927f5820/hibernate-core-4.3.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/javassist/javassist/3.12.1.GA/526633327faa61aee448a519e8a4d53ec3057885/javassist-3.12.1.GA.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-annotation/2.2.0/62962b54c490a95c0bb255fa93b0ddd6cc36dd4b/metrics-annotation-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.9.5/c3264abeea62c4d2f367e21484fbb40c7e256393/mockito-core-1.9.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/dom4j/dom4j/1.6.1/5d3ccc056b6f056dbf0dddfdf43894b9065a8f94/dom4j-1.6.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.1.4/46429d5878ff46151e63a7389c97828760527672/jackson-module-jaxb-annotations-2.1.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/8.1.10.v20130312/a386e7f0a8b9157b99a2f29a6deac61e007a2b9b/jetty-security-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/8.1.10.v20130312/e829c768f2b9de5d9fae3bc0aba3996bd0344f56/jetty-io-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/4.0.4.Final/f1af75eca4e13ac0578750a497159695feceebfc/hibernate-commons-annotations-4.0.4.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.8/6cce40435bcd8018018f16898de01976b319941a/commons-configuration-1.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-recipes/2.1.0-incubating/44504385f3267af983dbb9f6278681765c3d9808/curator-recipes-2.1.0-incubating.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final/5e731d961297e5a07290bfaf3db1fbc8bbbf405a/hibernate-jpa-2.1-api-1.0.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-assistedinject/3.0/544449ddb19f088dcde44f055d30a08835a954a7/guice-assistedinject-3.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/antlr/antlr/2.7.7/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jboss/jandex/1.1.0.Final/e84a2122e76f0b6503be78094ddf2108057ac15f/jandex-1.1.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/asm/asm/3.1/c157def142714c544bdea2e6144645702adf7097/asm-3.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.0.b2/3136ca936f64c9d68529f048c2618bd356bf85c9/xml-apis-1.0.b2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.ning/async-http-client/1.7.4/5e4adfe5898c270fd5d768d015ef249dfdd9fd4f/async-http-client-1.7.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.1/1a01a2a1218fcf9faa2cc2a6ced025bdea687262/jettison-1.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jboss.spec.javax.transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/1f9fef7a9fcbb41cc390fc370a291cf30729e094/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/flipkart.platform/prometheus/2.3.2/f64463f6e0c814eabd5477ea271367610d101557/prometheus-2.3.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/io.netty/netty/3.5.0.Final/60ecb5ad31045dc93e1b0fe8d0f14410d2011282/netty-3.5.0.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/8.1.10.v20130312/d198a8ad8ea20b4fb74c781175c48500ec2b8b7a/jetty-util-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-framework/2.1.0-incubating/b33f024fb6e8694b0ea9cded74929e0cc3e935ad/curator-framework-2.1.0-incubating.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.1-GA/d9a09f7732226af26bf99f19e2cffe0ae219db5b/javassist-3.18.1-GA.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.zookeeper/zookeeper/3.4.5/c0f69fb36526552a8f0bc548a6c33c49cf08e562/zookeeper-3.4.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-servlet/3.0/610cde0e8da5a8b7d8efb8f0b8987466ffebaaf9/guice-servlet-3.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey.contribs/jersey-guice/1.9.1/3e7ff6836d3ceabb40fd1b36be2728224bdcc52f/jersey-guice-1.9.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/flipkart.scm/java-cas-client/0.0.4/533a649835d3f085aee8beb24bb0e5ecb316a689/java-cas-client-0.0.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.8/f723abb59bf512952bfc503838f70f81487a6993/reflections-0.9.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/stax/stax-api/1.0.1/49c100caf72d658aca8e58bd74a4ba90fa2b0d70/stax-api-1.0.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/jline/jline/0.9.94/99a18e9a44834afdebc467294e1138364c207402/jline-0.9.94.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-core/1.17.1/7f73259ad9cf7be225f2a42bd4fe72f34ff9b65c/jersey-core-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jboss.netty/netty/3.2.2.Final/d4afed2b2038db3f5298da54314575ef194f8bd0/netty-3.2.2.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.hubspot.dropwizard/dropwizard-guice/0.6.2/431b6193345fcf7a6e52f14e3673c308f60be471/dropwizard-guice-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-server/1.17.1/c5aa1109d50d11e3f0dca3af7ba94448255443e2/jersey-server-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-servlet/1.17.1/36097a2966e9b989fbca6f7f579def99a91b29ad/jersey-servlet-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.5/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-core/2.2.0/f82c035cfa786d3cbec362c38c22a5f5b1bc8724/metrics-core-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.1/2d91b238c187a7f9852d08792d0375e3e02d04/jackson-databind-2.2.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-servlet/2.2.0/ba3a0ef3ebfd6d225c6060f6ab7f02a3812fca21/metrics-servlet-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-jetty/2.2.0/14e6db0fa4786c127f754ecd7cc0d5d179d65a28/metrics-jetty-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-logback/2.2.0/d5db4b1401c7233beb25aa513a16fb88549e762f/metrics-logback-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-jersey/2.2.0/2caba46abc2c8b8948144b44987db4e53261c81b/metrics-jersey-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.1.4/7e26d5e2761916314c2530e5ea35353948849094/jackson-jaxrs-json-provider-2.1.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.1.4/d854b9a179b422f65afaa34d3506ddc82a00b56f/jackson-dataformat-yaml-2.1.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-guava/2.1.2/41a0c22948d27e5be327ee67abe3fb96300a02d0/jackson-datatype-guava-2.1.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/net.sourceforge.argparse4j/argparse4j/0.4.0/d6ec4128ff0a3ef64f992f1d489b2b4179c8ba81/argparse4j-0.4.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.1/803710196f583a03f845a6215ae3eec678aacc13/jackson-annotations-2.2.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.4/43fe6b317ce9d7ea7760d651811e73bcb9cebd95/jul-to-slf4j-1.7.4.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.orbit/javax.servlet/3.0.0.v201112011016/aaaa85845fb5c59da00193f06b8e5278d8bf3f8/javax.servlet-3.0.0.v201112011016.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.0.10/842a711f90ad216ea46669a45a34cce09d2d90b1/logback-core-1.0.10.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-persist/3.0/61e6ff3713cb29b01dc0ae6942e3646a794ffbb0/guice-persist-3.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/8.1.10.v20130312/c0e26574ddcac7a86486f19a8b3782657acfd961/jetty-continuation-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.1/efe4f3ed142912df91b401b449baece2d3899802/jackson-core-2.2.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.0.10/b0c8c7e444528ca41a95cfa53a15602a19fb8528/logback-classic-1.0.10.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.dropwizard/dropwizard-core/0.6.2/b737ff9140b16e73f6af5a0fbcdfef233b70ffd3/dropwizard-core-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/8.1.10.v20130312/13ca9587bc1645f8fac89454b15252a2ad5bdcf5/jetty-server-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/8.1.10.v20130312/98f8029fe7236e9c66381c04f292b5319f47ca84/jetty-servlet-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/8.1.10.v20130312/d9eb53007e04d6338f12f3ded60fad1f7bfcb40e/jetty-http-8.1.10.v20130312.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.2.2/b76bee23cd3f3ee9b98bc7c2c14670e821ddbbfd/httpcore-4.2.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.joda/joda-money/0.9/a6c03f9646c69d9f41446b7cc2617a4435078d23/joda-money-0.9.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-validator/4.3.1.Final/49b31d8ea51fa21cc78a89e9d4ddb11d6bfb4669/hibernate-validator-4.3.1.Final.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.1.2/1a7b9bf4b308793e53b34eff718f5e156881ced5/jackson-datatype-joda-2.1.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.curator/curator-client/2.1.0-incubating/ac519719c70fa912d07402193897d4686cfc266f/curator-client-2.1.0-incubating.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-yammer-metrics-publisher/1.3.8/7de9e5ccaf0a3c989e67f346d2150748114e32dd/hystrix-yammer-metrics-publisher-1.3.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/3.0/5e670615a927571234df68a8b1fe1a16272be555/guice-multibindings-3.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.dropwizard/dropwizard-db/0.6.2/83b8680c6e2b55d47ea83486bbce936c6e3329ac/dropwizard-db-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-dbcp/7.0.37/19c76df19cb927b310f2191eb70ad0a49d9715d7/tomcat-dbcp-7.0.37.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jadira.usertype/usertype.spi/2.0.1/7c9f9461233d87b26edba79b19cde49ae1e87e1/usertype.spi-2.0.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.liquibase/liquibase-core/2.0.5/8cd577e200d45d9f6031ad0e7add6a2d819f2de0/liquibase-core-2.0.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.jadira.usertype/usertype.jodatime/2.0.1/e0ce17596f8c12f4454ef92b11dbe252e58d9aed/usertype.jodatime-2.0.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.mattbertolini/liquibase-slf4j/1.0.0/e2fd739d69a40db71e252462b2ac465521f0b15e/liquibase-slf4j-1.0.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey/jersey-client/1.17.1/b92fb0f202ca548f9067d57a133635fc1b8ad0ff/jersey-client-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.sun.jersey.contribs/jersey-apache-client4/1.17.1/31b9839810450b77bc8e09534efde995630a4bc6/jersey-apache-client4-1.17.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.2.3/37ced84d839a02fb856255eca85f0a4be95aa634/httpclient-4.2.3.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.5/bf39ccad53c1f695f32d610ce7f0e5bf9895b262/log4j-over-slf4j-1.7.5.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-httpclient/2.2.0/ea4b99868e71aa4dcf7f857290b438d79b08f63f/metrics-httpclient-2.2.0.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.netflix.rxjava/rxjava-core/0.14.11/b188dfbe556d2abe19577d1820349431a8ce107c/rxjava-core-0.14.11.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.netflix.archaius/archaius-core/0.4.1/69e956ddf4543c989461352a214f32a014abd64a/archaius-core-0.4.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.dropwizard/dropwizard-migrations/0.6.2/8147a11e97475652e6e96aec15b855f2beadfee0/dropwizard-migrations-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-hibernate4/2.2.1/4de084120a3ef728109e63d50efdbd9f1a3e631a/jackson-datatype-hibernate4-2.2.1.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.restbus/zookeeper-client/0.0.2/3d9214dd59615a10fecc85d34bc85f2f796c984f/zookeeper-client-0.0.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.yammer.dropwizard/dropwizard-client/0.6.2/af4fc4cd06796525a5345d15fc6bd5539c80185e/dropwizard-client-0.6.2.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.6.RELEASE/e377760b7692569535573ba9f6e80b4b74869369/spring-aop-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.6.RELEASE/587879b58acebeb5b0a63c01e822f9b44d9a4c77/spring-beans-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-core/1.3.8/32782ddbfd0e2c97cb46afa148661f44c0218f12/hystrix-core-1.3.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.6.RELEASE/d880beac77d42c5798aa2b632ddd0e4ae47c79ad/spring-core-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/com.restbus/restbus-client/0.3.8/5f5ec624c37d523bba0c3529307e1356dcb00e48/restbus-client-0.3.8.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.6.RELEASE/3bb3a52edabf9ffe73aa534fb085c816bac28b4d/spring-context-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.0.6.RELEASE/e13077d6527b7e0c1c04293c1d1696436d053a61/spring-orm-4.0.6.RELEASE.jar:/Users/adarsh.singh/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre, sun.java.command=jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 1', hibernate.dialect=org.hibernate.dialect.HSQLDialect, java.specification.vendor=Oracle Corporation, user.language=en, awt.toolkit=sun.lwawt.macosx.LWCToolkit, java.vm.info=mixed mode, java.version=1.8.0_25, hibernate.transaction.flush_before_completion=true, java.ext.dirs=/Users/adarsh.singh/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/classes, java.vendor=Oracle Corporation, org.gradle.test.worker=1, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.hbm2ddl.auto=create-drop, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeBig, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, sun.cpu.isalist=}
+13:12:44.957 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 4.3.1.Final
+13:12:44.963 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+13:12:44.964 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+13:12:44.966 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:44.968 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:45.047 [Test worker] DEBUG o.h.secure.spi.JaccIntegrator - Skipping JACC integration as it was not enabled
+13:12:45.050 [Test worker] DEBUG o.hibernate.engine.spi.CascadeStyles - External cascade style regsitration [persist : STYLE_PERSIST_SKIPLAZY] overrode base registration [STYLE_PERSIST]
+13:12:45.058 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.058 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.126 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister - Static SQL for collection: com.jpa.example.model.Student.courses
+13:12:45.126 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row insert: insert into Student_Course (STD_ID, COR_ID) values (?, ?)
+13:12:45.126 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row update: update Student_Course set COR_ID=? where STD_ID=? and COR_ID=?
+13:12:45.126 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row delete: delete from Student_Course where STD_ID=? and COR_ID=?
+13:12:45.126 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  One-shot delete: delete from Student_Course where STD_ID=?
+13:12:45.127 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister - Static SQL for collection: com.jpa.example.model.Course.students
+13:12:45.127 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row insert: insert into Student_Course (COR_ID, STD_ID) values (?, ?)
+13:12:45.127 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row update: update Student_Course set STD_ID=? where COR_ID=? and STD_ID=?
+13:12:45.127 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  Row delete: delete from Student_Course where COR_ID=? and STD_ID=?
+13:12:45.127 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister -  One-shot delete: delete from Student_Course where COR_ID=?
+13:12:45.130 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister - Static SQL for entity: com.jpa.example.model.Course
+13:12:45.130 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Version select: select ID from Course where ID =?
+13:12:45.130 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Snapshot select: select course_.ID, course_.name as name2_0_ from Course course_ where course_.ID=?
+13:12:45.130 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Insert 0: insert into Course (name, ID) values (?, ?)
+13:12:45.130 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Update 0: update Course set name=? where ID=?
+13:12:45.131 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Delete 0: delete from Course where ID=?
+13:12:45.131 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Identity insert: insert into Course (ID, name) values (default, ?)
+13:12:45.150 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@514d122c]
+13:12:45.151 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.151 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.154 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.165 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.169 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.170 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [NONE]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.170 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@78226b76]
+13:12:45.171 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.171 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.171 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.171 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.171 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.171 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [READ]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.171 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4c471148]
+13:12:45.171 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.171 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.172 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.172 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.172 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.172 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [UPGRADE]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.172 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@64c97dd4]
+13:12:45.172 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.172 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.172 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.173 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.173 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.173 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [UPGRADE_NOWAIT]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.173 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5ec87ddf]
+13:12:45.173 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.173 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.173 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.173 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.173 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.174 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [UPGRADE_SKIPLOCKED]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.174 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@203e7ca5]
+13:12:45.174 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.174 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.174 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.174 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.174 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.174 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [FORCE]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.175 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1875ba7d]
+13:12:45.175 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.175 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.175 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.175 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.175 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.175 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [PESSIMISTIC_READ]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.175 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@70caf967]
+13:12:45.176 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.176 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.176 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.176 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.176 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.176 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [PESSIMISTIC_WRITE]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.176 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@302ee891]
+13:12:45.176 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.177 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.177 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.177 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.177 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.177 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [PESSIMISTIC_FORCE_INCREMENT]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=? for update
+13:12:45.177 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27ed79d7]
+13:12:45.178 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.178 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.178 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.178 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.178 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.178 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [OPTIMISTIC]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.179 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@df0e7dd]
+13:12:45.179 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.179 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.179 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.179 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.180 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Course)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Course, querySpaceUid=<gen:0>, path=com.jpa.example.model.Course)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Course)
+          - SQL table alias mapping - course0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_0_0_}
+
+13:12:45.180 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Course [OPTIMISTIC_FORCE_INCREMENT]: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.193 [Test worker] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.jpa.example.model.Course: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.193 [Test worker] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.jpa.example.model.Course: select course0_.ID as ID1_0_0_, course0_.name as name2_0_0_ from Course course0_ where course0_.ID=?
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister - Static SQL for entity: com.jpa.example.model.Student
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Version select: select version from Student where ID =?
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Snapshot select: select student_.ID, student_.name as name2_1_, student_.version as version3_1_ from Student student_ where student_.ID=?
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Insert 0: insert into Student (name, version, ID) values (?, ?, ?)
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Update 0: update Student set name=?, version=? where ID=? and version=?
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Delete 0: delete from Student where ID=? and version=?
+13:12:45.193 [Test worker] DEBUG o.h.p.entity.AbstractEntityPersister -  Identity insert: insert into Student (ID, name, version) values (default, ?, ?)
+13:12:45.193 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@70c6eb20]
+13:12:45.193 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.194 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.194 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.194 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.194 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.194 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.194 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [NONE]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=?
+13:12:45.194 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1d2f68bd]
+13:12:45.194 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.194 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.194 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.194 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.194 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.194 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.195 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [READ]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=?
+13:12:45.195 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c27ec0f]
+13:12:45.195 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.195 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.195 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.195 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.195 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.195 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.195 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [UPGRADE]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.195 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2b983d1]
+13:12:45.195 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.196 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.196 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.196 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.196 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.196 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.196 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [UPGRADE_NOWAIT]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.196 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6780d4e]
+13:12:45.196 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.196 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.196 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.196 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.197 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.197 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.197 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [UPGRADE_SKIPLOCKED]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.197 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@74093b1]
+13:12:45.197 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.197 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.197 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.197 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.197 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.198 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.198 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [FORCE]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.198 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6278a183]
+13:12:45.198 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.198 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.198 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.198 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.198 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.199 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.199 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [PESSIMISTIC_READ]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.199 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@61bdba32]
+13:12:45.199 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.199 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.199 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.199 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.199 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.200 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.200 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [PESSIMISTIC_WRITE]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.200 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4d1e008]
+13:12:45.200 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.200 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.200 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.200 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.200 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.201 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.201 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [PESSIMISTIC_FORCE_INCREMENT]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=? for update
+13:12:45.201 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@712d1cb7]
+13:12:45.201 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.201 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.201 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.201 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.202 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.202 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.202 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [OPTIMISTIC]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=?
+13:12:45.202 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@480d1a2b]
+13:12:45.202 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.202 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.202 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.202 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.203 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.203 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(entity=com.jpa.example.model.Student)
+    - Returns
+       - EntityReturnImpl(entity=com.jpa.example.model.Student, querySpaceUid=<gen:0>, path=com.jpa.example.model.Student)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.jpa.example.model.Student)
+          - SQL table alias mapping - student0_
+          - alias suffix - 0_
+          - suffixed key columns - {ID1_1_0_}
+
+13:12:45.203 [Test worker] DEBUG o.h.loader.entity.plan.EntityLoader - Static select for entity com.jpa.example.model.Student [OPTIMISTIC_FORCE_INCREMENT]: select student0_.ID as ID1_1_0_, student0_.name as name2_1_0_, student0_.version as version3_1_0_ from Student student0_ where student0_.ID=?
+13:12:45.206 [Test worker] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.jpa.example.model.Student: select student0_.ID as ID1_1_1_, student0_.name as name2_1_1_, student0_.version as version3_1_1_, courses1_.STD_ID as STD_ID1_1_3_, course2_.ID as COR_ID2_2_3_, course2_.ID as ID1_0_0_, course2_.name as name2_0_0_ from Student student0_ left outer join Student_Course courses1_ on student0_.ID=courses1_.STD_ID left outer join Course course2_ on courses1_.COR_ID=course2_.ID where student0_.ID=?
+13:12:45.206 [Test worker] DEBUG org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.jpa.example.model.Student: select student0_.ID as ID1_1_1_, student0_.name as name2_1_1_, student0_.version as version3_1_1_, courses1_.STD_ID as STD_ID1_1_3_, course2_.ID as COR_ID2_2_3_, course2_.ID as ID1_0_0_, course2_.name as name2_0_0_ from Student student0_ left outer join Student_Course courses1_ on student0_.ID=courses1_.STD_ID left outer join Course course2_ on courses1_.COR_ID=course2_.ID where student0_.ID=?
+13:12:45.211 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@2a38daff]
+13:12:45.212 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6de893a4]
+13:12:45.214 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.214 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : students
+13:12:45.214 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Property path deemed to be circular : students
+13:12:45.214 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.215 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.216 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(collection=com.jpa.example.model.Student.courses)
+    - Returns
+       - CollectionReturnImpl(collection=com.jpa.example.model.Student.courses, querySpaceUid=<gen:0>, path=[com.jpa.example.model.Student.courses])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.jpa.example.model.Course, querySpaceUid=<gen:1>, path=[com.jpa.example.model.Student.courses].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.jpa.example.model.Student.courses)
+          - SQL table alias mapping - courses0_
+          - alias suffix - 0_
+          - suffixed key columns - {STD_ID1_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - ID1_0_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.jpa.example.model.Course)
+                - SQL table alias mapping - course1_
+                - alias suffix - 1_
+                - suffixed key columns - {ID1_0_1_}
+
+13:12:45.217 [Test worker] DEBUG o.h.l.c.plan.CollectionLoader - Static select for collection com.jpa.example.model.Student.courses: select courses0_.STD_ID as STD_ID1_1_0_, courses0_.COR_ID as COR_ID2_2_0_, course1_.ID as ID1_0_1_, course1_.name as name2_0_1_ from Student_Course courses0_ inner join Course course1_ on courses0_.COR_ID=course1_.ID where courses0_.STD_ID=?
+13:12:45.217 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@35c71b31]
+13:12:45.217 [Test worker] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2271b3ed]
+13:12:45.217 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : courses
+13:12:45.217 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Property path deemed to be circular : courses
+13:12:45.217 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : name
+13:12:45.217 [Test worker] DEBUG o.h.p.w.spi.MetamodelGraphWalker - Visiting attribute path : version
+13:12:45.217 [Test worker] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+13:12:45.217 [Test worker] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+13:12:45.218 [Test worker] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter - LoadPlan(collection=com.jpa.example.model.Course.students)
+    - Returns
+       - CollectionReturnImpl(collection=com.jpa.example.model.Course.students, querySpaceUid=<gen:0>, path=[com.jpa.example.model.Course.students])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.jpa.example.model.Student, querySpaceUid=<gen:1>, path=[com.jpa.example.model.Course.students].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.jpa.example.model.Course.students)
+          - SQL table alias mapping - students0_
+          - alias suffix - 0_
+          - suffixed key columns - {COR_ID2_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - ID1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.jpa.example.model.Student)
+                - SQL table alias mapping - student1_
+                - alias suffix - 1_
+                - suffixed key columns - {ID1_1_1_}
+
+13:12:45.218 [Test worker] DEBUG o.h.l.c.plan.CollectionLoader - Static select for collection com.jpa.example.model.Course.students: select students0_.COR_ID as COR_ID2_0_0_, students0_.STD_ID as STD_ID1_2_0_, student1_.ID as ID1_1_1_, student1_.name as name2_1_1_, student1_.version as version3_1_1_ from Student_Course students0_ inner join Student student1_ on students0_.STD_ID=student1_.ID where students0_.COR_ID=?
+13:12:45.220 [Test worker] DEBUG o.h.internal.SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@6bdf2ee4
+13:12:45.221 [Test worker] DEBUG o.h.internal.SessionFactoryRegistry - Registering SessionFactory: d2372028-4dac-456e-bf6d-276a227ef36e (<unnamed>)
+13:12:45.221 [Test worker] DEBUG o.h.internal.SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+13:12:45.221 [Test worker] DEBUG o.h.internal.SessionFactoryImpl - Instantiated session factory
+13:12:45.224 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Course
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Student
+13:12:45.225 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.225 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.225 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Course
+13:12:45.226 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Student
+13:12:45.226 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.226 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.227 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.227 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.227 [Test worker] INFO  o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+13:12:45.228 [Test worker] DEBUG o.h.tool.hbm2ddl.SchemaExport - Import file not found: /import.sql
+13:12:45.229 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table Student_Course 
+        drop constraint FK_h7fff2ppsu76ktsfo0dqf4rs1
+Hibernate: 
+    alter table Student_Course 
+        drop constraint FK_h7fff2ppsu76ktsfo0dqf4rs1
+13:12:45.231 [Test worker] ERROR o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table Student_Course drop constraint FK_h7fff2ppsu76ktsfo0dqf4rs1
+13:12:45.231 [Test worker] ERROR o.h.tool.hbm2ddl.SchemaExport - user lacks privilege or object not found: PUBLIC.STUDENT_COURSE
+13:12:45.231 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table Student_Course 
+        drop constraint FK_tllda2kivg8un1ubj1dr7c9w9
+Hibernate: 
+    alter table Student_Course 
+        drop constraint FK_tllda2kivg8un1ubj1dr7c9w9
+13:12:45.231 [Test worker] ERROR o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table Student_Course drop constraint FK_tllda2kivg8un1ubj1dr7c9w9
+13:12:45.231 [Test worker] ERROR o.h.tool.hbm2ddl.SchemaExport - user lacks privilege or object not found: PUBLIC.STUDENT_COURSE
+13:12:45.231 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table Course if exists
+Hibernate: 
+    drop table Course if exists
+13:12:45.231 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table Student if exists
+Hibernate: 
+    drop table Student if exists
+13:12:45.232 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table Student_Course if exists
+Hibernate: 
+    drop table Student_Course if exists
+13:12:45.232 [Test worker] DEBUG org.hibernate.SQL - 
+    create table Course (
+        ID bigint generated by default as identity (start with 1),
+        name varchar(255),
+        primary key (ID)
+    )
+Hibernate: 
+    create table Course (
+        ID bigint generated by default as identity (start with 1),
+        name varchar(255),
+        primary key (ID)
+    )
+13:12:45.232 [Test worker] DEBUG org.hibernate.SQL - 
+    create table Student (
+        ID bigint generated by default as identity (start with 1),
+        name varchar(255),
+        version integer,
+        primary key (ID)
+    )
+Hibernate: 
+    create table Student (
+        ID bigint generated by default as identity (start with 1),
+        name varchar(255),
+        version integer,
+        primary key (ID)
+    )
+13:12:45.233 [Test worker] DEBUG org.hibernate.SQL - 
+    create table Student_Course (
+        STD_ID bigint not null,
+        COR_ID bigint not null
+    )
+Hibernate: 
+    create table Student_Course (
+        STD_ID bigint not null,
+        COR_ID bigint not null
+    )
+13:12:45.234 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table Student_Course 
+        add constraint FK_h7fff2ppsu76ktsfo0dqf4rs1 
+        foreign key (COR_ID) 
+        references Course
+Hibernate: 
+    alter table Student_Course 
+        add constraint FK_h7fff2ppsu76ktsfo0dqf4rs1 
+        foreign key (COR_ID) 
+        references Course
+13:12:45.235 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table Student_Course 
+        add constraint FK_tllda2kivg8un1ubj1dr7c9w9 
+        foreign key (STD_ID) 
+        references Student
+Hibernate: 
+    alter table Student_Course 
+        add constraint FK_tllda2kivg8un1ubj1dr7c9w9 
+        foreign key (STD_ID) 
+        references Student
+13:12:45.236 [Test worker] INFO  o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Course
+13:12:45.236 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Student
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Course
+13:12:45.237 [Test worker] DEBUG org.hibernate.cfg.Configuration - Resolving reference to class: com.jpa.example.model.Student
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.HSQLDialect]
+13:12:45.237 [Test worker] DEBUG o.h.internal.NamedQueryRepository - Checking 0 named HQL queries
+13:12:45.237 [Test worker] DEBUG o.h.internal.NamedQueryRepository - Checking 0 named SQL queries
+13:12:45.242 [Test worker] DEBUG o.h.s.internal.StatisticsInitiator - Statistics initialized [enabled=false]
+13:12:45.246 [Test worker] DEBUG o.h.j.i.schemagen.JpaSchemaGenerator - No actions specified; doing nothing
+13:12:45.279 [Test worker] DEBUG o.h.j.i.EntityManagerFactoryRegistry - Initializing EntityManagerFactoryRegistry : org.hibernate.jpa.internal.EntityManagerFactoryRegistry@438e2c21
+13:12:45.279 [Test worker] DEBUG o.h.j.i.EntityManagerFactoryRegistry - Registering EntityManagerFactory: hsqldb-ds 
+13:12:45.323 [Test worker] DEBUG o.h.e.t.spi.AbstractTransactionImpl - begin
+13:12:45.323 [Test worker] DEBUG o.h.e.j.i.LogicalConnectionImpl - Obtaining JDBC connection
+13:12:45.323 [Test worker] DEBUG o.h.e.j.i.LogicalConnectionImpl - Obtained JDBC connection
+13:12:45.324 [Test worker] DEBUG o.h.e.t.i.jdbc.JdbcTransaction - initial autocommit status: false
+13:12:45.339 [Test worker] DEBUG org.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+13:12:45.349 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        Student
+        (ID, name, version) 
+    values
+        (default, ?, ?)
+Hibernate: 
+    insert 
+    into
+        Student
+        (ID, name, version) 
+    values
+        (default, ?, ?)
+13:12:45.355 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Natively generated identity: 1
+13:12:45.357 [Test worker] DEBUG o.h.e.t.spi.AbstractTransactionImpl - committing
+13:12:45.358 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+13:12:45.358 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+13:12:45.362 [Test worker] DEBUG o.h.engine.internal.Collections - Collection found: [com.jpa.example.model.Student.courses#1], was: [<unreferenced>] (initialized)
+13:12:45.363 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+13:12:45.363 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 (re)creations, 0 updates, 0 removals to 1 collections
+13:12:45.364 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+13:12:45.364 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.jpa.example.model.Student{courses=[], name=testStudent, id=1, version=0}
+13:12:45.364 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister - Inserting collection: [com.jpa.example.model.Student.courses#1]
+13:12:45.364 [Test worker] DEBUG o.h.p.c.AbstractCollectionPersister - Collection was empty
+13:12:45.365 [Test worker] DEBUG o.h.e.t.i.jdbc.JdbcTransaction - committed JDBC Connection
+13:12:45.366 [Test worker] DEBUG o.h.e.j.i.LogicalConnectionImpl - Releasing JDBC connection
+13:12:45.366 [Test worker] DEBUG o.h.e.j.i.LogicalConnectionImpl - Released JDBC connection
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
